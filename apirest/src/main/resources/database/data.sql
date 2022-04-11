@@ -27,11 +27,16 @@ VALUES(bb2_api.item_seq.nextval, 14, 'Product: Table, Colour:Blue',
 INSERT INTO bb2_api.item (iditem, itemcode, description, price, state, creation, creator)
 VALUES(bb2_api.item_seq.nextval, 15, 'Product: Door, Colour:Black',
 52.0, 1, TO_DATE('28/04/2022', 'DD/MM/YYYY'), 1);
+INSERT INTO bb2_api.item (iditem, itemcode, description, price, state, creation, creator)
+VALUES(bb2_api.item_seq.nextval, 16, 'Product: Door, Colour:Black',
+52.0, 0, TO_DATE('28/04/2021', 'DD/MM/YYYY'), 1);
 
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (1, 1);
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (4, 2);
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (2, 2);
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (1, 4);
+INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (5, 4);
+INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (6, 4);
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (2, 3);
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (3, 3);
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (4, 3);

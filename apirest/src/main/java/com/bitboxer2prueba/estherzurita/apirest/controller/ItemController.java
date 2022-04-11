@@ -21,6 +21,11 @@ public class ItemController {
         return itemDAO.findAll();
     }
 
+    @GetMapping("/finditemsbystate/active/{active}")
+    public List<Item> findItems(@PathVariable Boolean active){
+        return itemDAO.findByState(active);
+    }
+
     @PostMapping("/saveitem")
     public String saveItem(@RequestBody Item item){
         try {
@@ -41,7 +46,7 @@ public class ItemController {
         return "OK";
     }
 
-    @DeleteMapping("removeitem/id/{idItem}")
+    @DeleteMapping("removeitem/{idItem}")
     public String removeItem(@PathVariable Long idItem){
         try{
             itemDAO.remove(idItem);

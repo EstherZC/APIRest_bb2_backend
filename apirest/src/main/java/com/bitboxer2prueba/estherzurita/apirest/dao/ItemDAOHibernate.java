@@ -39,6 +39,13 @@ public class ItemDAOHibernate implements ItemDAO{
 
     @Override
     @Transactional
+    public List<Item> findByState(Boolean active) {
+        String query = "FROM Item WHERE state = :active";
+        return entityManager.createQuery(query).setParameter("active", active).getResultList();
+    }
+
+    @Override
+    @Transactional
     public void save(Item item) throws Exception {
         checkItem(item);
         item.setState(true);

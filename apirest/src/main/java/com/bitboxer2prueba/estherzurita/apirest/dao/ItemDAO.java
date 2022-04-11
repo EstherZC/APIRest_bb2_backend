@@ -10,6 +10,8 @@ public interface ItemDAO {
 
     Item findById(Long id);
 
+    List findByState(Boolean active);
+
     void save(Item item) throws Exception;
 
     void update(Item item) throws Exception;
