@@ -8,12 +8,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "supplier", schema = "bb2_api")
+@Table(name = "item", schema = "bb2_api")
 public class Item {
 
     @Id
     @GeneratedValue(generator = "item_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name="item_seq", sequenceName = "bb2_api")
+    @SequenceGenerator(name="item_seq", schema = "bb2_api", sequenceName = "item_seq", allocationSize = 1)
     @Column(name = "iditem")
     private Long idItem;
     @Column(name = "itemcode", nullable = false, unique = true)
@@ -21,23 +21,26 @@ public class Item {
     private String description;
     private Double price;
     @Type(type= "org.hibernate.type.NumericBooleanType")
-    @Column(name = "state", nullable = false)
+    @Column(name = "state")
     private Boolean state;
     private Date creation;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = { CascadeType.MERGE, CascadeType.REMOVE,
+            CascadeType.REFRESH, CascadeType.DETACH })
     @JoinColumn(name = "creator", referencedColumnName = "iduser")
-    private User creator;
-    @ManyToMany(cascade = { CascadeType.ALL })
+    private Supplier creator;
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REMOVE,
+            CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(
             name = "items_suppliers", schema = "bb2_api",
-            joinColumns = { @JoinColumn(name = "itemcode") },
+            joinColumns = { @JoinColumn(name = "iditem") },
             inverseJoinColumns = { @JoinColumn(name = "idsupplier") }
     )
     private Set<Supplier> suppliers;
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REMOVE,
+            CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(
-            name = "price_reductions", schema = "bb2_api",
-            joinColumns = { @JoinColumn(name = "itemcode") },
+            name = "items_price_reductions", schema = "bb2_api",
+            joinColumns = { @JoinColumn(name = "iditem") },
             inverseJoinColumns = { @JoinColumn(name = "idreduction") }
     )
     private Set<PriceReduction> priceReductions;
@@ -90,11 +93,11 @@ public class Item {
         this.creation = creation;
     }
 
-    public User getCreator() {
+    public Supplier getCreator() {
         return creator;
     }
 
-    public void setCreator(User creator) {
+    public void setCreator(Supplier creator) {
         this.creator = creator;
     }
 

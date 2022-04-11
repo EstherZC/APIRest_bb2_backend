@@ -12,7 +12,7 @@ public class PriceReduction {
 
     @Id
     @GeneratedValue(generator = "price_reduction_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name="price_reduction_seq", sequenceName = "bb2_api")
+    @SequenceGenerator(name="price_reduction_seq", schema = "bb2_api", sequenceName = "price_reduction_seq", allocationSize = 1)
     @Column(name = "idreduction")
     private Long idReduction;
     @Column(name = "pricereduction")
