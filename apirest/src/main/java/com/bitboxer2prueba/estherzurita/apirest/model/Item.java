@@ -24,11 +24,10 @@ public class Item {
     @Column(name = "state")
     private Boolean state;
     private Date creation;
-    @OneToOne(cascade = { CascadeType.MERGE, CascadeType.REMOVE,
-            CascadeType.REFRESH, CascadeType.DETACH })
+    @ManyToOne
     @JoinColumn(name = "creator", referencedColumnName = "iduser")
     private Supplier creator;
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REMOVE,
+    @ManyToMany(cascade = {CascadeType.MERGE,
             CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(
             name = "items_suppliers", schema = "bb2_api",
@@ -36,7 +35,7 @@ public class Item {
             inverseJoinColumns = { @JoinColumn(name = "idsupplier") }
     )
     private Set<Supplier> suppliers;
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REMOVE,
+    @ManyToMany(cascade = {CascadeType.MERGE,
             CascadeType.REFRESH, CascadeType.DETACH})
     @JoinTable(
             name = "items_price_reductions", schema = "bb2_api",
