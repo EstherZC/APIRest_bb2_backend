@@ -3,7 +3,10 @@ package com.bitboxer2prueba.estherzurita.apirest.dao;
 import com.bitboxer2prueba.estherzurita.apirest.model.Item;
 
 import java.util.List;
-
+/**
+ * @author Esther Zurita
+ * @version 1.0.0
+ */
 public interface ItemDAO {
 
     List findAll();

@@ -1,7 +1,10 @@
 package com.bitboxer2prueba.estherzurita.apirest.model;
 
 import javax.persistence.*;
-
+/**
+ * @author Esther Zurita
+ * @version 1.0.0
+ */
 @MappedSuperclass
 public class User {
 

@@ -6,7 +6,10 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
+/**
+ * @author Esther Zurita
+ * @version 1.0.0
+ */
 @Entity
 @Table(name = "item", schema = "bb2_api")
 public class Item {

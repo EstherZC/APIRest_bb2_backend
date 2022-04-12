@@ -5,7 +5,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
-
+/**
+ * @author Esther Zurita
+ * @version 1.0.0
+ */
 @Entity
 @Table(name = "price_reduction", schema = "bb2_api")
 public class PriceReduction {

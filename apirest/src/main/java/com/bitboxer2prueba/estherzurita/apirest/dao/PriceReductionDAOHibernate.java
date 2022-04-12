@@ -6,7 +6,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-
+/**
+ * @author Esther Zurita
+ * @version 1.0.0
+ */
 @Repository
 @Transactional
 public class PriceReductionDAOHibernate implements PriceReductionDAO{

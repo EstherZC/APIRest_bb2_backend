@@ -7,7 +7,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
-
+/**
+ * @author Esther Zurita
+ * @version 1.0.0
+ */
 @Repository
 @Transactional
 public class SupplierDAOHibernate implements SupplierDAO{

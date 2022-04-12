@@ -9,7 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * @author Esther Zurita
+ * @version 1.0.0
+ */
 @Repository
 @Transactional
 public class ItemDAOHibernate implements ItemDAO{
