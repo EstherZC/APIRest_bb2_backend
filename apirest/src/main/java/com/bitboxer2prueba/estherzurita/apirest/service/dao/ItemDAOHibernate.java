@@ -1,4 +1,4 @@
-package com.bitboxer2prueba.estherzurita.apirest.dao;
+package com.bitboxer2prueba.estherzurita.apirest.service.dao;
 
 
 import com.bitboxer2prueba.estherzurita.apirest.model.Item;

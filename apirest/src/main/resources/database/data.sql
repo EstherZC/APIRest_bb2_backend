@@ -1,11 +1,11 @@
 INSERT INTO bb2_api.supplier(iduser, username, password, name, country)
- VALUES (bb2_api.user_seq.nextval, 'prueba', 'prueba', 'Pepe Juan', 'España');
+ VALUES (bb2_api.user_seq.nextval, 'prueba', '$2a$10$DIgASOccRVFWGmIufjkmXeQDFFsPgZ1WOyUN9uRZPNo6wC8iIuln6', 'Pepe Juan', 'España');
 INSERT INTO bb2_api.supplier(iduser, username, password, name, country)
-VALUES (bb2_api.user_seq.nextval, 'prueba2', 'prueba2', 'Zurita', 'España');
+VALUES (bb2_api.user_seq.nextval, 'prueba2', '$2a$10$DIgASOccRVFWGmIufjkmXeQDFFsPgZ1WOyUN9uRZPNo6wC8iIuln6', 'Zurita', 'España');
 INSERT INTO bb2_api.supplier(iduser, username, password, name, country)
-VALUES (bb2_api.user_seq.nextval, 'prueba3', 'prueba3', 'All In One', 'España');
+VALUES (bb2_api.user_seq.nextval, 'prueba3', '$2a$10$DIgASOccRVFWGmIufjkmXeQDFFsPgZ1WOyUN9uRZPNo6wC8iIuln6', 'All In One', 'España');
 INSERT INTO bb2_api.supplier(iduser, username, password, name, country)
-VALUES (bb2_api.user_seq.nextval, 'prueba4', 'prueba4', 'SML', 'Filandia');
+VALUES (bb2_api.user_seq.nextval, 'prueba4', '$2a$10$DIgASOccRVFWGmIufjkmXeQDFFsPgZ1WOyUN9uRZPNo6wC8iIuln6', 'SML', 'Filandia');
 
 INSERT INTO bb2_api.price_reduction (idreduction, pricereduction, startdate, enddate)
 VALUES(bb2_api.price_reduction_seq.nextval, 5.0, TO_DATE('10/05/2022', 'DD/MM/YYYY'), TO_DATE('17/05/2022', 'DD/MM/YYYY'));
