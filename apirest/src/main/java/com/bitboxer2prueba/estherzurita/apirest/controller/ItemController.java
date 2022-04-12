@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController()
 @RequestMapping("/apiRest")
+@CrossOrigin(origins = "*")
 public class ItemController {
 
     @Autowired
@@ -19,6 +20,11 @@ public class ItemController {
     @GetMapping("/finditems")
     public List<Item> findItems(){
         return itemDAO.findAll();
+    }
+
+    @GetMapping("/finditembyid/{idItem}")
+    public Item findItemByID(@PathVariable Long idItem){
+        return itemDAO.findById(idItem);
     }
 
     @GetMapping("/finditemsbystate/active/{active}")
