@@ -13,7 +13,6 @@ public class Supplier extends User{
     private String name;
     @Column(name = "country")
     private String country;
-
     @ManyToMany(mappedBy = "suppliers")
     @JsonIgnore
     private Set<Item> items;
