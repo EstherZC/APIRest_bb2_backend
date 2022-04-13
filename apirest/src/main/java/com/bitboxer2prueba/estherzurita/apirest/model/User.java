@@ -1,5 +1,8 @@
 package com.bitboxer2prueba.estherzurita.apirest.model;
 
+import com.bitboxer2prueba.estherzurita.apirest.enums.UserTypeConverter;
+import com.bitboxer2prueba.estherzurita.apirest.enums.UserTypeEnum;
+
 import javax.persistence.*;
 /**
  * @author Esther Zurita
@@ -17,6 +20,9 @@ public class User {
     private String username;
     @Column(name = "password")
     private String password;
+    @Column(name = "type")
+    @Convert(converter = UserTypeConverter.class)
+    private UserTypeEnum userType;
 
     public Long getIdUser() {
         return idUser;
@@ -40,5 +46,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public UserTypeEnum getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserTypeEnum userType) {
+        this.userType = userType;
     }
 }
