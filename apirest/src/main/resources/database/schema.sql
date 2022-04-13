@@ -3,7 +3,8 @@ create sequence bb2_api.item_seq;
 create sequence bb2_api.user_seq;
 create sequence bb2_api.price_reduction_seq;
 
-create table bb2_api.supplier (iduser BIGINT PRIMARY KEY, username varchar(50) not null unique, password varchar not null, name varchar(100), country varchar);
+create table bb2_api.supplier (iduser BIGINT PRIMARY KEY, username varchar(50) not null unique, password varchar not null,
+ type INTEGER, name varchar(100), country varchar);
 
 create table bb2_api.item (iditem  BIGINT PRIMARY KEY, itemcode BIGINT unique not null, description varchar, price DOUBLE, state NUMERIC(1),
   creation DATE, creator BIGINT not null references bb2_api.supplier);
