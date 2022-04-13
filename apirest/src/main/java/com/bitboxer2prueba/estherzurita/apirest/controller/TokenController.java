@@ -29,6 +29,6 @@ public class TokenController {
                 .authenticate(new UsernamePasswordAuthenticationToken(login.getUsername(), login.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = tokenProvider.generateToken(authentication);
-        return ResponseEntity.ok(new JwtResponse(jwt, 200));
+        return ResponseEntity.ok(new JwtResponse(jwt));
     }
 }

@@ -5,9 +5,9 @@ public class JwtResponse {
     private final Integer status;
     private final String token;
 
-    public JwtResponse(String token, Integer status)
+    public JwtResponse(String token)
     {
-        this.status = status;
+        this.status = (token != null || token.length() != 0) ? 200 : 204 ;
         this.token = token;
     }
 
@@ -18,4 +18,5 @@ public class JwtResponse {
     public Integer getStatus(){
         return status;
     }
+
 }

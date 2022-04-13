@@ -11,6 +11,7 @@ import java.util.List;
  * @version 1.0.0
  */
 @RestController()
+@CrossOrigin
 @RequestMapping("/apiRest")
 public class SupplierController {
 
