@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * @version 1.0.0
  */
 @RestController()
+@CrossOrigin
 @RequestMapping("/apiRest")
 public class PriceReductionController {
 
