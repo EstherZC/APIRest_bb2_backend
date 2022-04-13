@@ -2,7 +2,6 @@ package com.bitboxer2prueba.estherzurita.apirest.model;
 
 import com.bitboxer2prueba.estherzurita.apirest.enums.UserTypeConverter;
 import com.bitboxer2prueba.estherzurita.apirest.enums.UserTypeEnum;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
