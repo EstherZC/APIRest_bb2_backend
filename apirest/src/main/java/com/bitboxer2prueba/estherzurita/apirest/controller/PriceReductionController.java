@@ -27,8 +27,14 @@ public class PriceReductionController {
         return "OK";
     }
 
+    @GetMapping("/findreductions")
+    public List<PriceReduction> findPriceReductions(){
+        return priceReductionDAO.findAll();
+    }
+
+
     @GetMapping("/findreductionbyid/{idReduction}")
-    public PriceReduction findPriceReductions(@PathVariable Long idReduction){
+    public PriceReduction findPriceReductionsById(@PathVariable Long idReduction){
         return priceReductionDAO.findById(idReduction);
     }
 

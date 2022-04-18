@@ -1,16 +1,15 @@
-package com.bitboxer2prueba.estherzurita.apirest.dao;
+package com.bitboxer2prueba.estherzurita.apirest.service.dao;
 
 import com.bitboxer2prueba.estherzurita.apirest.model.PriceReduction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-
+import java.util.List;
 import javax.persistence.EntityManager;
 /**
  * @author Esther Zurita
  * @version 1.0.0
  */
-import java.util.List;
 
 @Repository
 @Transactional
