@@ -1,4 +1,4 @@
-package com.bitboxer2prueba.estherzurita.apirest.service.dao;
+package com.bitboxer2prueba.estherzurita.apirest.dao;
 
 import com.bitboxer2prueba.estherzurita.apirest.model.PriceReduction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,20 @@ import javax.persistence.EntityManager;
  * @author Esther Zurita
  * @version 1.0.0
  */
+import java.util.List;
+
 @Repository
 @Transactional
 public class PriceReductionDAOHibernate implements PriceReductionDAO{
 
     @Autowired
     EntityManager entityManager;
+
+    @Override
+    public List findAll() {
+        String query = "FROM PriceReduction";
+        return entityManager.createQuery(query).getResultList();
+    }
 
     @Override
     @Transactional
