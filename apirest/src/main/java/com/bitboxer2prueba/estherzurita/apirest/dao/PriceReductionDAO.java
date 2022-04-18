@@ -2,9 +2,13 @@ package com.bitboxer2prueba.estherzurita.apirest.dao;
 
 import com.bitboxer2prueba.estherzurita.apirest.model.PriceReduction;
 
+import java.util.List;
+
 public interface PriceReductionDAO {
 
-    public PriceReduction findById(Long idReduction);
+    List findAll();
 
-    public void save(PriceReduction priceReduction) throws Exception;
+    PriceReduction findById(Long idReduction);
+
+    void save(PriceReduction priceReduction) throws Exception;
 }
