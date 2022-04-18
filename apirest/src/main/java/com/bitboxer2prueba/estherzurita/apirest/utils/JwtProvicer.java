@@ -20,7 +20,7 @@ public class JwtProvicer {
         UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
         final String authorities = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.joining(","));
         Date now = new Date();
-        Date expiryDate = new Date(now.getTime() + 1800000);
+        Date expiryDate = new Date(now.getTime() + 9900000);
         return Jwts.builder()
                 .setSubject(userPrincipal.getUsername())
                 .claim("AUTHORITIES_KEY", authorities)
@@ -42,11 +42,7 @@ public class JwtProvicer {
                     .setSigningKey(secret)
                     .parseClaimsJws(authToken);
             return true;
-        } catch (SignatureException ex) {
-        } catch (MalformedJwtException ex) {
-        } catch (ExpiredJwtException ex) {
-        } catch (UnsupportedJwtException ex) {
-        } catch (IllegalArgumentException ex) {
+        } catch (SignatureException | MalformedJwtException | ExpiredJwtException | UnsupportedJwtException | IllegalArgumentException ex) {
         }
         return false;
     }
