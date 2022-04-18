@@ -25,7 +25,6 @@ public enum UserTypeEnum {
         return type;
     }
 
-    @JsonCreator
     public static UserTypeEnum getFromId(Integer id) {
         for(UserTypeEnum e : values()) {
             if(e.id.equals(id))
