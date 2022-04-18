@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -13,6 +14,12 @@ public class PriceReductionDAOHibernate implements PriceReductionDAO{
 
     @Autowired
     EntityManager entityManager;
+
+    @Override
+    public List findAll() {
+        String query = "FROM PriceReduction";
+        return entityManager.createQuery(query).getResultList();
+    }
 
     @Override
     @Transactional
