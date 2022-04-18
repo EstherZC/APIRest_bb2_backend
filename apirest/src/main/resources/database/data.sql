@@ -46,10 +46,10 @@ INSERT INTO bb2_api.item (iditem, itemcode, description, price, state, creation,
 VALUES(bb2_api.item_seq.nextval, 20, 'Product: Table, Colour:Blue',
 23.89, 1, TO_DATE('8/01/2022', 'DD/MM/YYYY'), 5);
 INSERT INTO bb2_api.item (iditem, itemcode, description, price, state, creation, creator)
-VALUES(bb2_api.item_seq.nextval, 20, 'Product: Door, Colour:Black',
+VALUES(bb2_api.item_seq.nextval, 21, 'Product: Door, Colour:Black',
 64.50, 1, TO_DATE('8/10/2021', 'DD/MM/YYYY'), 5);
 INSERT INTO bb2_api.item (iditem, itemcode, description, price, state, creation, creator)
-VALUES(bb2_api.item_seq.nextval, 20, 'Product: Door, Colour:Black',
+VALUES(bb2_api.item_seq.nextval, 22, 'Product: Door, Colour:Black',
 200.55, 1, TO_DATE('18/04/2020', 'DD/MM/YYYY'), 5);
 
 INSERT INTO bb2_api.items_suppliers (iditem, idsupplier) VALUES (1, 1);
