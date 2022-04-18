@@ -1,5 +1,7 @@
 package com.bitboxer2prueba.estherzurita.apirest.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -11,6 +13,8 @@ import java.util.Set;
  * @version 1.0.0
  */
 @Entity
+@Getter
+@Setter
 @Table(name = "item", schema = "bb2_api")
 public class Item {
 
@@ -47,65 +51,6 @@ public class Item {
     )
     private Set<PriceReduction> priceReductions;
 
-    public Long getIdItem() {
-        return idItem;
-    }
-
-    public void setIdItem(Long idItem) {
-        this.idItem = idItem;
-    }
-
-    public Long getItemCode() {
-        return itemCode;
-    }
-
-    public void setItemCode(Long itemCode) {
-        this.itemCode = itemCode;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public Boolean getState() {
-        return state;
-    }
-
-    public void setState(Boolean state) {
-        this.state = state;
-    }
-
-    public Date getCreation() {
-        return creation;
-    }
-
-    public void setCreation(Date creation) {
-        this.creation = creation;
-    }
-
-    public Supplier getCreator() {
-        return creator;
-    }
-
-    public void setCreator(Supplier creator) {
-        this.creator = creator;
-    }
-
-    public Set<Supplier> getSuppliers() {
-        return suppliers;
-    }
 
     public void addSupplier(Supplier supplier){
         if(suppliers == null){
@@ -116,12 +61,10 @@ public class Item {
         }
     }
 
-    public void setSuppliers(Set<Supplier> suppliers) {
-        this.suppliers = suppliers;
-    }
-
-    public Set<PriceReduction> getPriceReductions() {
-        return priceReductions;
+    public void removeSupplier(Supplier supplier){
+        if(suppliers != null){
+            suppliers.remove(supplier);
+        }
     }
 
     public void addPriceReduction(PriceReduction reduction){
@@ -132,10 +75,5 @@ public class Item {
             priceReductions.add(reduction);
         }
     }
-
-    public void setPriceReductions(Set<PriceReduction> priceReductions) {
-        this.priceReductions = priceReductions;
-    }
-
 
 }

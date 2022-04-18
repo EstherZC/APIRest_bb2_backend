@@ -3,6 +3,7 @@ package com.bitboxer2prueba.estherzurita.apirest.service.dao;
 
 import com.bitboxer2prueba.estherzurita.apirest.model.Supplier;
 
+import java.security.KeyException;
 import java.util.List;
 /**
  * @author Esther Zurita
@@ -10,10 +11,13 @@ import java.util.List;
  */
 public interface SupplierDAO {
 
-    public List<Supplier> findAll();
+    List<Supplier> findAll();
 
-    public Supplier findById(Long id);
+    Supplier findById(Long id);
 
-    public Supplier findByUsername(String username);
+    Supplier findByUsername(String username);
 
+    void save(Supplier supplier) throws Exception;
+
+    void remove(Long id) throws Exception;
 }

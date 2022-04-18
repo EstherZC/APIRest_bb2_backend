@@ -15,6 +15,10 @@ public interface ItemDAO {
 
     List findByState(Boolean active);
 
+    List findByCreator(Long id);
+
+    List findBySupplier(Long id);
+
     void save(Item item) throws Exception;
 
     void update(Item item) throws Exception;

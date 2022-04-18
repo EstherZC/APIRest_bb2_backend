@@ -49,6 +49,20 @@ public class ItemDAOHibernate implements ItemDAO{
 
     @Override
     @Transactional
+    public List findByCreator(Long id) {
+        String query = "FROM Item WHERE creator.idUser = :id";
+        return entityManager.createQuery(query).setParameter("id", id).getResultList();
+    }
+
+    @Override
+    @Transactional
+    public List findBySupplier(Long id) {
+        String query = "SELECT it FROM Item it JOIN it.suppliers sup WHERE sup.idUser = :id";
+        return entityManager.createQuery(query).setParameter("id", id).getResultList();
+    }
+
+    @Override
+    @Transactional
     public void save(Item item) throws Exception {
         checkItem(item);
         item.setState(true);

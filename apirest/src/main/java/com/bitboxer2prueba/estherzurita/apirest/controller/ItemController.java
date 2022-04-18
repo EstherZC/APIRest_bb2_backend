@@ -4,6 +4,7 @@ package com.bitboxer2prueba.estherzurita.apirest.controller;
 import com.bitboxer2prueba.estherzurita.apirest.service.dao.ItemDAO;
 import com.bitboxer2prueba.estherzurita.apirest.model.Item;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,6 @@ public class ItemController {
 
     @Autowired
     ItemDAO itemDAO;
-
 
     @GetMapping("/finditems")
     public List<Item> findItems(){
@@ -55,6 +55,7 @@ public class ItemController {
         return "OK";
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("removeitem/{idItem}")
     public String removeItem(@PathVariable Long idItem){
         try{

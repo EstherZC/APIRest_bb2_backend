@@ -2,6 +2,8 @@ package com.bitboxer2prueba.estherzurita.apirest.model;
 
 import com.bitboxer2prueba.estherzurita.apirest.enums.UserTypeConverter;
 import com.bitboxer2prueba.estherzurita.apirest.enums.UserTypeEnum;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 /**
@@ -9,6 +11,8 @@ import javax.persistence.*;
  * @version 1.0.0
  */
 @MappedSuperclass
+@Getter
+@Setter
 public class User {
 
     @Id
@@ -23,36 +27,4 @@ public class User {
     @Column(name = "type")
     @Convert(converter = UserTypeConverter.class)
     private UserTypeEnum userType;
-
-    public Long getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public UserTypeEnum getUserType() {
-        return userType;
-    }
-
-    public void setUserType(UserTypeEnum userType) {
-        this.userType = userType;
-    }
 }

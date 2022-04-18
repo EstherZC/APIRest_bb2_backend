@@ -1,6 +1,8 @@
 package com.bitboxer2prueba.estherzurita.apirest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -9,6 +11,8 @@ import java.util.Set;
  * @version 1.0.0
  */
 @Entity
+@Getter
+@Setter
 @Table(name = "supplier", schema = "bb2_api")
 public class Supplier extends User{
 
@@ -20,27 +24,4 @@ public class Supplier extends User{
     @JsonIgnore
     private Set<Item> items;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public Set<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(Set<Item> items) {
-        this.items = items;
-    }
 }

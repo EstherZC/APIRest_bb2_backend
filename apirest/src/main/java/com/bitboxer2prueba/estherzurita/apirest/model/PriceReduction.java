@@ -1,6 +1,8 @@
 package com.bitboxer2prueba.estherzurita.apirest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,6 +12,8 @@ import java.util.Set;
  * @version 1.0.0
  */
 @Entity
+@Getter
+@Setter
 @Table(name = "price_reduction", schema = "bb2_api")
 public class PriceReduction {
 
@@ -30,43 +34,4 @@ public class PriceReduction {
     @JsonIgnore
     private Set<Item> items;
 
-    public Long getIdReduction() {
-        return idReduction;
-    }
-
-    public void setIdReduction(Long idReduction) {
-        this.idReduction = idReduction;
-    }
-
-    public Double getPriceReduction() {
-        return priceReduction;
-    }
-
-    public void setPriceReduction(Double priceReduction) {
-        this.priceReduction = priceReduction;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public Set<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(Set<Item> items) {
-        this.items = items;
-    }
 }
