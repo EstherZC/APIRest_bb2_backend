@@ -1,11 +1,12 @@
 package com.bitboxer2prueba.estherzurita.apirest.service.dao;
 
 import com.bitboxer2prueba.estherzurita.apirest.model.PriceReduction;
-/**
- * @author Esther Zurita
- * @version 1.0.0
- */
+
+import java.util.List;
+
 public interface PriceReductionDAO {
+
+    List findAll();
 
     PriceReduction findById(Long idReduction);
 
